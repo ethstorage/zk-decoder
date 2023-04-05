@@ -3,7 +3,7 @@ BUILD_DIR=../../build
 CIRCUIT_NAME=$1
 ZPROTOCOL=${ZPROTOCOL:-groth16}
 CURVE=${CURVE:-bn128}
-PHASE1=$BUILD_DIR/pot18_${CURVE}_final.ptau
+PHASE1=$BUILD_DIR/pot22_${CURVE}_final.ptau
 
 
 if [ ! -d "$BUILD_DIR" ]; then
