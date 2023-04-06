@@ -20,15 +20,22 @@ coeffs = []
 pf = PrimeField(prime)
 ru = pf.exp(5, (prime-1) // nelements)
 ru_idx = 378
+key = 1
 
 for i in range(nelements // 2):
-    inputs = [0, i, i + 1]
+    inputs = [0, key + i, key + i + 1]
     outputs = instance.run_hash_state(inputs)
     coeffs.extend(outputs[0:2])
 
 print("f({}) = {}".format(x, pf.eval_poly_at(coeffs, x)))
 # print(coeffs)
 
+for i in range(10):
+    print("a_{} = {}".format(i, hex(coeffs[i])))
+
 evals = fft(coeffs, prime, ru)
 print("ru^{} = {}".format(ru_idx, pf.exp(ru, ru_idx)))
 print("f(ru^{}) = {}".format(ru_idx, evals[ru_idx]))
+
+for i in range(10):
+    print("f(ru^{}) = {}".format(i, hex(evals[i])))

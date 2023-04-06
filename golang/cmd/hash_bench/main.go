@@ -12,6 +12,8 @@ import (
 
 	"crypto/sha256"
 
+	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethstorage/zk-decoder/golang/encoder"
 	"github.com/iden3/go-iden3-crypto/poseidon"
 	"golang.org/x/crypto/sha3"
 )
@@ -26,21 +28,6 @@ var hv = flag.Int("h", 3, "hash version")
 func main() {
 	flag.Parse()
 
-	fmt.Println("keccah256 test vector")
-	k := sha3.NewLegacyKeccak256()
-	k.Write([]byte{})
-	h := k.Sum(nil)
-	fmt.Println(hex.EncodeToString(h))
-
-	fmt.Println("poseidon test vector (254 bits)")
-	initState := big.NewInt(0)
-	input := []*big.Int{big.NewInt(int64(1)), big.NewInt(int64(2))}
-	hs, _ := poseidon.HashState(initState, input)
-	for _, h := range hs {
-		bs := h.Bytes()
-		fmt.Println(hex.EncodeToString(bs[:]))
-	}
-
 	start := time.Now()
 
 	prefix := []byte("data")
@@ -52,10 +39,31 @@ func main() {
 
 	if *hv == 3 {
 		fmt.Printf("use Keccak256\n")
+		fmt.Println("keccah256 test vector")
+		k := sha3.NewLegacyKeccak256()
+		k.Write([]byte{})
+		h := k.Sum(nil)
+		fmt.Println(hex.EncodeToString(h))
 	} else if *hv == 2 {
 		fmt.Printf("use Sha256\n")
 	} else if *hv == 100 {
 		fmt.Printf("use Poseidon hash\n")
+		fmt.Println("poseidon test vector (254 bits)")
+		initState := big.NewInt(0)
+		input := []*big.Int{big.NewInt(int64(1)), big.NewInt(int64(2))}
+		hs, _ := poseidon.HashState(initState, input)
+		for _, h := range hs {
+			bs := h.Bytes()
+			fmt.Println(hex.EncodeToString(bs[:]))
+		}
+	} else if *hv == 1000 {
+		fmt.Println("use Poseidon blob encoder\n")
+		fmt.Println("poseidon blob test vector (254 bits)")
+		h := common.BigToHash(big.NewInt(int64(1)))
+		encoded, _ := encoder.Encode(h, 128*1024)
+		for i := 0; i < 10; i++ {
+			fmt.Println(hex.EncodeToString(encoded[i*32 : (i+1)*32]))
+		}
 	} else {
 		fmt.Println("unsupported hash")
 		return
@@ -99,10 +107,13 @@ func main() {
 						k.Write(prefix)
 						k.Write(buf)
 						k.Sum(nil)
-					} else {
+					} else if *hv == 100 {
 						initState := big.NewInt(0)
 						input := []*big.Int{big.NewInt(int64(j)), big.NewInt(int64(j + 1))}
 						poseidon.HashState(initState, input)
+					} else {
+						h := common.BigToHash(big.NewInt(int64(j)))
+						encoder.Encode(h, 128*1024)
 					}
 				}
 			}
