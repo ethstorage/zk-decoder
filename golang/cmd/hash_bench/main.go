@@ -26,10 +26,20 @@ var hv = flag.Int("h", 3, "hash version")
 func main() {
 	flag.Parse()
 
+	fmt.Println("keccah256 test vector")
 	k := sha3.NewLegacyKeccak256()
 	k.Write([]byte{})
 	h := k.Sum(nil)
 	fmt.Println(hex.EncodeToString(h))
+
+	fmt.Println("poseidon test vector (254 bits)")
+	initState := big.NewInt(0)
+	input := []*big.Int{big.NewInt(int64(1)), big.NewInt(int64(2))}
+	hs, _ := poseidon.HashState(initState, input)
+	for _, h := range hs {
+		bs := h.Bytes()
+		fmt.Println(hex.EncodeToString(bs[:]))
+	}
 
 	start := time.Now()
 
