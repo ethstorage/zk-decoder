@@ -1,7 +1,7 @@
 CIRCUITS_DIR=../../circuits
 BUILD_DIR=../../build
 INPUT_DIR=../../input
-PHASE1=$BUILD_DIR/pot18_final.ptau
+PHASE1=$BUILD_DIR/pot22_final.ptau
 CIRCUIT_NAME=$1
 WITNESS=$BUILD_DIR/witness_"$CIRCUIT_NAME".wtns
 PROOF=$BUILD_DIR/proof_"$CIRCUIT_NAME".json
