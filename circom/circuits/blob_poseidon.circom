@@ -10,9 +10,12 @@ include "./poly_eval.circom";
 template blob_poseidon(nelements) {
     signal input encoding_key;
     signal input x;                 // x should be a root of unity
+    signal output x0;
     signal output y;
 
     signal coeffs[nelements];
+
+    x0 <== x;
 
     component poseidons[nelements / 2];
     for (var i = 0; i < nelements / 2; i++) {
