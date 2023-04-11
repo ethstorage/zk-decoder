@@ -19,6 +19,7 @@ coeffs = []
 
 pf = PrimeField(prime)
 ru = pf.exp(5, (prime-1) // nelements)
+print("ru = {}".format(ru))
 ru_idx = 378
 key = 1
 

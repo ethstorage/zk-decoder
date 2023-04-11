@@ -2,17 +2,17 @@ pragma circom 2.0.6;
 include "../node_modules/circomlib/circuits/poseidon.circom";
 
 template poly_eval(n) {
-    signal input coeffs[n];
-    signal input x;
+    signal input coeffsIn[n];
+    signal input xIn;
     signal xn[n];
     signal sum[n];
-    signal output y;
+    signal output yOut;
     xn[0] <== 1;
-    sum[0] <== coeffs[0];
+    sum[0] <== coeffsIn[0];
     for (var i = 1; i < n; i++) {
-        xn[i] <== xn[i-1] * x;
-        sum[i] <== xn[i] * coeffs[i] + sum[i-1];
+        xn[i] <== xn[i-1] * xIn;
+        sum[i] <== xn[i] * coeffsIn[i] + sum[i-1];
     }
-    y <== sum[n-1];
+    yOut <== sum[n-1];
 }
 
