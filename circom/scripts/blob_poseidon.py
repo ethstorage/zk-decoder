@@ -12,7 +12,7 @@ instance = poseidon.FastPoseidon(prime, security_level, alpha, input_rate, t=t, 
 assert prime == 21888242871839275222246405745257275088548364400416034343698204186575808495617
 
 nelements = 4096
-encoding_key = 0
+encoding_key = 0x71bc57f0e71dc8c6c8f0ac1cb24b4e74766177daa1c849f98ef210a25fda8f3e
 x = 123456
 
 coeffs = []
@@ -20,7 +20,7 @@ coeffs = []
 pf = PrimeField(prime)
 ru = pf.exp(5, (prime-1) // nelements)
 print("ru = {}".format(ru))
-ru_idx = 378
+ru_idx = 84
 key = 1
 
 for i in range(nelements // 2):
