@@ -22,6 +22,10 @@ print("ru = {}".format(ru))
 ru_idx = 4095
 encoding_key = 0x1234
 
+modulusBn254 = 0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000001
+encoding_key = encoding_key % modulusBn254
+print("encoding_key:{}".format(encoding_key))
+
 for i in range(nelements // 2):
     inputs = [0, encoding_key + i, encoding_key + i + 1]
     outputs = instance.run_hash_state(inputs)
