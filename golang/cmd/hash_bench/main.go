@@ -90,8 +90,8 @@ func main() {
 				}
 
 				if *v >= 3 && ltid%*r == 0 {
-					elasped := time.Since(start)
-					fmt.Printf("used time %f, hps %f\n", elasped.Seconds(), float64(ltid)/elasped.Seconds())
+					elapsed := time.Since(start)
+					fmt.Printf("used time %f, hps %f\n", elapsed.Seconds(), float64(ltid)/elapsed.Seconds())
 				}
 
 				for j := ltid; j < ltid+*b; j++ {
@@ -123,6 +123,6 @@ func main() {
 
 	wg.Wait()
 
-	elasped := time.Since(start)
-	fmt.Printf("used time %f, hps %f\n", elasped.Seconds(), float64(*n)/elasped.Seconds())
+	elapsed := time.Since(start)
+	fmt.Printf("used time %f, hps %f\n", elapsed.Seconds(), float64(*n)/elapsed.Seconds())
 }
