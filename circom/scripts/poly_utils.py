@@ -17,7 +17,7 @@ class PrimeField():
     def exp(self, x, p):
         return pow(x, p, self.modulus)
 
-    # evaluate the polynomal in the evaluation form in a coset
+    # evaluate the polynomial in the evaluation form in a coset
     # xs[0] must the shifting parameter h
     # formula is (x^m - h^m) / (m h^m) * sum(ys[i] * xs[i] / (x - xs[i]))
     def eval_barycentric(self, x, xs, ys):
@@ -29,7 +29,7 @@ class PrimeField():
             s = self.add(s, self.div(self.mul(xs[i], ys[i]), self.sub(x, xs[i])))
         return self.mul(s, self.div(self.sub(xm, hm), self.mul(m, hm)))
 
-    # evaluate the polynomal in the evaluate form for all cosets
+    # evaluate the polynomial in the evaluate form for all cosets
     # with some optimization on inversion
     def eval_barycentric_all(self, x, xs, ys, m):
         ncosets = len(xs) // m
@@ -268,7 +268,7 @@ class PrimeField():
         # assert o == [self.lagrange_interp_4(xs, ys) for xs, ys in zip(xsets, ysets)]
         return o
 
-    # Linear combination of polynomals
+    # Linear combination of polynomials
     def linearcomb_polys(self, ps, c):
         psc = []
         for i in range(len(c)):
