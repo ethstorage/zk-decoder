@@ -1,0 +1,56 @@
+{
+  "title": "Ethstorage Circuits Ceremony",
+  "description": "This is a trusted setup ceremony for the Ethstorage Circuits with is used to proof storage on L2 dynamic datasets with an Ethereum L1 Contract",
+  "startDate": "2025-07-18T00:00:00",
+  "endDate": "2025-08-01T00:00:00",
+  "timeoutMechanismType": "DYNAMIC",
+  "penalty": "20",
+  "circuits": [
+      {
+          "description": "A simple blob encoder using Poseidon hash",
+          "compiler": {
+              "version": "2.0.6",
+              "commitHash": "3fa5592c41a59a8a79cb6a328606c64a4b451762"
+          },
+          "template": {
+              "source": "https://github.com/ethstorage/zk-decoder/blob/main/circom/circuits/blob_poseidon.circom",
+              "commitHash": "40b96c29deb24276ea164217e46d2d55e54ce583",
+              "paramsConfiguration": []
+          },
+          "verification": {
+              "cfOrVm": "CF"
+          },
+          "artifacts": {
+              "r1csStoragePath": "https://drive.google.com/file/d/1rpXBqScljsBXP70dvYku5Vtsjm1a8HE1",
+              "wasmStoragePath": "https://drive.google.com/file/d/1hDDXINT-5-6UUHxLroR-hXeqFeRZUJ0U"
+          },
+          "name": "blob poseidon circuit",
+          "dynamicThreshold": "50",
+          "fixedTimeWindow": "15",
+          "sequencePosition": "1"
+      },
+	  {
+          "description": "blob encoder using Poseidon hash, n = 2",
+          "compiler": {
+              "version": "2.0.6",
+              "commitHash": "3fa5592c41a59a8a79cb6a328606c64a4b451762"
+          },
+          "template": {
+              "source": "https://github.com/ethstorage/zk-decoder/blob/main/circom/circuits/blob_poseidon_2.circom",
+              "commitHash": "40b96c29deb24276ea164217e46d2d55e54ce583",
+              "paramsConfiguration": []
+          },
+          "verification": {
+              "cfOrVm": "CF"
+          },
+          "artifacts": {
+              "r1csStoragePath": "https://drive.google.com/file/d/16mDRbs540a2E7W1yOZRufkjs7Yrl_ILD",
+              "wasmStoragePath": "https://drive.google.com/file/d/1bBCKOF0F3wtV--2S57kRySEFZ0mzhxS7"
+          },
+          "name": "blob poseidon 2 circuit",
+          "dynamicThreshold": "50",
+          "fixedTimeWindow": "30",
+          "sequencePosition": "2"
+      }
+  ]
+}
