@@ -14,7 +14,7 @@
           },
           "template": {
               "source": "https://github.com/ethstorage/zk-decoder/blob/main/circom/circuits/blob_poseidon.circom",
-              "commitHash": "40b96c29deb24276ea164217e46d2d55e54ce583",
+              "commitHash": "52f538629440fc97dc931e04fdf81dc2362491ae",
               "paramsConfiguration": []
           },
           "verification": {
@@ -37,7 +37,7 @@
           },
           "template": {
               "source": "https://github.com/ethstorage/zk-decoder/blob/main/circom/circuits/blob_poseidon_2.circom",
-              "commitHash": "40b96c29deb24276ea164217e46d2d55e54ce583",
+              "commitHash": "52f538629440fc97dc931e04fdf81dc2362491ae",
               "paramsConfiguration": []
           },
           "verification": {
