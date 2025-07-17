@@ -2,7 +2,7 @@
   "title": "Ethstorage Circuits Ceremony",
   "description": "This is a trusted setup ceremony for the Ethstorage Circuits with is used to proof storage on L2 dynamic datasets with an Ethereum L1 Contract",
   "startDate": "2025-07-18T00:00:00",
-  "endDate": "2025-08-01T00:00:00",
+  "endDate": "2025-07-23T00:00:00",
   "timeoutMechanismType": "DYNAMIC",
   "penalty": "20",
   "circuits": [
