@@ -1,6 +1,6 @@
 {
-  "title": "Ethstorage Circuits Ceremony",
-  "description": "This is the trusted setup ceremony for Ethstorage Circuits used to prove storage on L2 dynamic datasets with an Ethereum L1 Contract",
+  "title": "Ethstorage Trusted Setup Ceremony",
+  "description": "This is a trusted setup ceremony for the Ethstorage Circuits which is used to prove storage on L2 dynamic datasets with an Ethereum L1 Contract",
   "startDate": "2025-07-18T00:00:00",
   "endDate": "2025-07-23T00:00:00",
   "timeoutMechanismType": "DYNAMIC",
@@ -30,7 +30,7 @@
           "sequencePosition": "1"
       },
 	  {
-          "description": "blob encoder using n Poseidon hash (n = 2), circom compile with --O2 paramter",
+          "description": "combine multiple blob poseidon circuits into one (n = 2), circom compile with --O2 paramter",
           "compiler": {
               "version": "2.2.2",
               "commitHash": "e410b0d5cd2948a15931df0bc50d79ce56fa8c32"
