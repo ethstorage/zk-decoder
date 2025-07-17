@@ -7,10 +7,10 @@
   "penalty": "20",
   "circuits": [
       {
-          "description": "A simple blob encoder using Poseidon hash",
+          "description": "blob encoder using Poseidon hash, circom compile with --O2 paramter",
           "compiler": {
-              "version": "2.0.6",
-              "commitHash": "3fa5592c41a59a8a79cb6a328606c64a4b451762"
+              "version": "2.2.2",
+              "commitHash": "e410b0d5cd2948a15931df0bc50d79ce56fa8c32"
           },
           "template": {
               "source": "https://github.com/ethstorage/zk-decoder/blob/main/circom/circuits/blob_poseidon.circom",
@@ -21,8 +21,8 @@
               "cfOrVm": "CF"
           },
           "artifacts": {
-              "r1csStoragePath": "https://drive.google.com/file/d/1rpXBqScljsBXP70dvYku5Vtsjm1a8HE1",
-              "wasmStoragePath": "https://drive.google.com/file/d/1hDDXINT-5-6UUHxLroR-hXeqFeRZUJ0U"
+              "r1csStoragePath": "https://ethstorage-trusted-setup.s3.us-west-2.amazonaws.com/blob_poseidon.r1cs",
+              "wasmStoragePath": "https://ethstorage-trusted-setup.s3.us-west-2.amazonaws.com/blob_poseidon.wasm"
           },
           "name": "blob poseidon circuit",
           "dynamicThreshold": "50",
@@ -30,10 +30,10 @@
           "sequencePosition": "1"
       },
 	  {
-          "description": "blob encoder using Poseidon hash, n = 2",
+          "description": "blob encoder using multi (n = 2) Poseidon hash, circom compile with --O2 paramter",
           "compiler": {
-              "version": "2.0.6",
-              "commitHash": "3fa5592c41a59a8a79cb6a328606c64a4b451762"
+              "version": "2.2.2",
+              "commitHash": "e410b0d5cd2948a15931df0bc50d79ce56fa8c32"
           },
           "template": {
               "source": "https://github.com/ethstorage/zk-decoder/blob/main/circom/circuits/blob_poseidon_2.circom",
@@ -44,8 +44,8 @@
               "cfOrVm": "CF"
           },
           "artifacts": {
-              "r1csStoragePath": "https://drive.google.com/file/d/16mDRbs540a2E7W1yOZRufkjs7Yrl_ILD",
-              "wasmStoragePath": "https://drive.google.com/file/d/1bBCKOF0F3wtV--2S57kRySEFZ0mzhxS7"
+              "r1csStoragePath": "https://ethstorage-trusted-setup.s3.us-west-2.amazonaws.com/blob_poseidon_2.r1cs",
+              "wasmStoragePath": "https://ethstorage-trusted-setup.s3.us-west-2.amazonaws.com/blob_poseidon_2.wasm"
           },
           "name": "blob poseidon 2 circuit",
           "dynamicThreshold": "50",

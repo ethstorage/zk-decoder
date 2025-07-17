@@ -17,4 +17,4 @@ This configuration is used to apply our route to https://ceremony.pse.dev and pr
 ### circom compile params
 - cargo 1.88.0 (873a06493 2025-05-10)
 - rustc 1.88.0 (6b00bc388 2025-06-23)
-- circom compiler 2.2.2
+- circom compiler 2.2.2 (e410b0d5cd2948a15931df0bc50d79ce56fa8c32)
