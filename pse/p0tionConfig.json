@@ -1,6 +1,6 @@
 {
   "title": "Ethstorage Trusted Setup Ceremony",
-  "description": "This is a trusted setup ceremony for the Ethstorage Circuits which is used to prove storage on L2 dynamic datasets with an Ethereum L1 Contract",
+  "description": "This trusted setup ceremony is for the Ethstorage circuits, which enable proof of storage for dynamic L2 datasets through a verifier contract on Ethereum L1.",
   "startDate": "2025-07-18T00:00:00",
   "endDate": "2025-07-23T00:00:00",
   "timeoutMechanismType": "DYNAMIC",
