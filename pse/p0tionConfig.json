@@ -7,7 +7,7 @@
   "penalty": "20",
   "circuits": [
       {
-          "description": "blob encoder using Poseidon hash, circom compile with --O2 paramter",
+          "description": "Compile with --O2 paramter",
           "compiler": {
               "version": "2.2.2",
               "commitHash": "e410b0d5cd2948a15931df0bc50d79ce56fa8c32"
@@ -30,7 +30,7 @@
           "sequencePosition": "1"
       },
 	  {
-          "description": "combine multiple blob poseidon circuits into one (n = 2), circom compile with --O2 paramter",
+          "description": "Compile with --O2 paramter",
           "compiler": {
               "version": "2.2.2",
               "commitHash": "e410b0d5cd2948a15931df0bc50d79ce56fa8c32"
