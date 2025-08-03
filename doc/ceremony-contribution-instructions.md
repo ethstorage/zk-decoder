@@ -1,7 +1,7 @@
 # Overview
 Thank you for contributing to EthStorage’s trusted setup ceremony! This is the trusted setup for our groth16 zk-SNARK to blob_poseidon circuits and will be used in the general purpose verifier contracts on mainnet.
 
-This document will walk you through contributing to the EthStorage trusted setup ceremony. If you hit problems, you can also read the [p0tion team’s documentation](https://p0tion.super.site/ce8f7047468b41239dc512919644535c), which includes more details on how to contribute to p0tion-based ceremonies like ours; you can also reach out to us [on Discord](https://discord.gg/xhCwaMp7ps), we are happy to be of help. ☺️
+This document will walk you through contributing to the EthStorage trusted setup ceremony. If you hit problems, you can also read the [p0tion team’s documentation](https://p0tion.super.site/ce8f7047468b41239dc512919644535c), which includes more details on how to contribute to p0tion-based ceremonies like ours; you can also reach out to us [on Discord](https://discord.gg/xhCwaMp7ps), we are happy to help. ☺️
 
 
 ## Prerequisites to contribute:
