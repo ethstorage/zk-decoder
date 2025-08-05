@@ -1,0 +1,56 @@
+{
+  "title": "EthStorage Trusted Setup Ceremony",
+  "description": "This trusted setup ceremony is for the EthStorage circuits, which enable proof of storage for dynamic L2 datasets through a verifier contract on Ethereum L1.",
+  "startDate": "2025-07-18T00:00:00",
+  "endDate": "2025-07-23T00:00:00",
+  "timeoutMechanismType": "DYNAMIC",
+  "penalty": "20",
+  "circuits": [
+      {
+          "description": "Compile with --O2 paramter",
+          "compiler": {
+              "version": "2.2.2",
+              "commitHash": "e410b0d5cd2948a15931df0bc50d79ce56fa8c32"
+          },
+          "template": {
+              "source": "https://github.com/ethstorage/zk-decoder/blob/main/circom/circuits/blob_poseidon.circom",
+              "commitHash": "52f538629440fc97dc931e04fdf81dc2362491ae",
+              "paramsConfiguration": []
+          },
+          "verification": {
+              "cfOrVm": "CF"
+          },
+          "artifacts": {
+              "r1csStoragePath": "https://ethstorage-trusted-setup.s3.us-west-2.amazonaws.com/blob_poseidon.r1cs",
+              "wasmStoragePath": "https://ethstorage-trusted-setup.s3.us-west-2.amazonaws.com/blob_poseidon.wasm"
+          },
+          "name": "blob poseidon circuit",
+          "dynamicThreshold": "50",
+          "fixedTimeWindow": "15",
+          "sequencePosition": "1"
+      },
+	  {
+          "description": "Compile with --O2 paramter",
+          "compiler": {
+              "version": "2.2.2",
+              "commitHash": "e410b0d5cd2948a15931df0bc50d79ce56fa8c32"
+          },
+          "template": {
+              "source": "https://github.com/ethstorage/zk-decoder/blob/main/circom/circuits/blob_poseidon_2.circom",
+              "commitHash": "52f538629440fc97dc931e04fdf81dc2362491ae",
+              "paramsConfiguration": []
+          },
+          "verification": {
+              "cfOrVm": "CF"
+          },
+          "artifacts": {
+              "r1csStoragePath": "https://ethstorage-trusted-setup.s3.us-west-2.amazonaws.com/blob_poseidon_2.r1cs",
+              "wasmStoragePath": "https://ethstorage-trusted-setup.s3.us-west-2.amazonaws.com/blob_poseidon_2.wasm"
+          },
+          "name": "blob poseidon 2 circuit",
+          "dynamicThreshold": "50",
+          "fixedTimeWindow": "30",
+          "sequencePosition": "2"
+      }
+  ]
+}
