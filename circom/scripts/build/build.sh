@@ -14,7 +14,7 @@ fi
 echo "****COMPILING CIRCUIT****"
 start=`date +%s`
 set -x
-circom $CIRCUITS_DIR/$CIRCUIT_NAME.circom -p ${CURVE} --r1cs --wasm --sym --c --wat --output "$BUILD_DIR" || exit
+circom $CIRCUITS_DIR/$CIRCUIT_NAME.circom -p ${CURVE} --O2 --r1cs --wasm --sym --c --wat --output "$BUILD_DIR" || exit
 { set +x; } 2>/dev/null
 end=`date +%s`
 echo "DONE ($((end-start))s)"
